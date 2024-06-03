@@ -57,6 +57,7 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
@@ -78,7 +79,6 @@ def list_accounts():
 ######################################################################
 # READ AN ACCOUNT
 ######################################################################
-
 @app.route("/accounts/<int:account_id>", methods = ["GET"])
 def read_account(account_id):
     ''' Reads an account based on the id that is requested
@@ -142,4 +142,3 @@ def check_content_type(media_type):
         status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
         f"Content-Type must be {media_type}",
     )
-
